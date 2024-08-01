@@ -1,17 +1,25 @@
 import React from 'react'
+import PRODUCT from './PRODUCTS.json'
 import './App.css';
-import Button from '../Button/Button'
 
-function App() {
+import Button from './../Button/Button'
+import Header from './../Header/Header'
+import Footer from '../Footer/Footer';
+function App() { 
   return (
     <div className="App">
-      <h1>
-        this is sample 
-        </h1> 
-        <p  className='paragraph1'>
-          this is a sample paragraph for test 
-        </p>
-        <Button />
+      <Header />
+      <ul className='products '>
+      {PRODUCT.map((item) => (
+        <li>
+          <h3>{item.name}</h3>
+          <img src={item.image} />
+          <span>{item.price}</span>
+          <button>buy now  </button>
+        </li>
+      ))}
+      </ul>
+      <Footer />
     </div>
   );
 }
