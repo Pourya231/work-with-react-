@@ -1,5 +1,5 @@
 import React from 'react'
 import './Button.css'
-const Button = () => (<button className='button1'> click here</button> )
+const Button = ({text}) => (<button className='button1'>{text}</button> )
 
 export default Button
